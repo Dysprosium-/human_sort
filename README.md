@@ -1,6 +1,6 @@
 # Human sort
 
-Sort a list using the Python built-in sorting algorithm (Timsort), but ask a human what is better between two elements at each comparison.
+Sort a list using the Python built-in sorting algorithm (Timsort), but ask a human what is better between two elements at each comparaison.
 
 ## Usage
 
@@ -16,7 +16,7 @@ The script works on Python 3 with the standard library. To sort items you need t
 	Put a blank line between groups of equal elements.
 
 	-l <logfile>
-	Load a comparisons log file. Comparisons stored in the log won't be asked again to the user.
+	Load a comparaisons log file. comparaisons stored in the log won't be asked again to the user.
 
 	--nolog
 	Doesn't save a log file. Use with caution. You really want a log file.

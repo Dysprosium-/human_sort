@@ -8,27 +8,27 @@ Sort a list using human comparison.
 """
 
 # We use the built-in Python sorting algorithm (Timsort) but replace the
-# comparison operator by a special one which ask the user what is
+# comparaison operator by a special one which ask the user what is
 # better between two compared elements.
 #
 # This doesn't affect the complexity, but affects the overall time of
 # execution since the user might take several seconds to decide the result
-# of each comparison.
+# of each comparaison.
 #
-# As a partial solution to this problem, we register all the human comparisons
+# As a partial solution to this problem, we register all the human comparaisons
 # into a dictionary which associates pairs of elements to -1 or 1 and
 # store this dictionary in a log file when the program stops. This allows the
 # user to stop the sorting process and resume it later by loading the log file.
 #
 # When launching the program again with a log file, the sorting process start
-# again from the beginning, but all already-answered comparisons are known, so
+# again from the beginning, but all already-answered comparaisons are known, so
 # the algorithm reach the point where it was before (where it needs new human
-# comparisons) really fast, assuming little-sized inputs.
+# comparaisons) really fast, assuming little-sized inputs.
 #
 # The storing of equality in this dicationary is a little bit more complicated.
 # The problem is that the sorting algorithm doesn't know transitivity. That is,
 # if a == b and b == c and the algorithm wants to compare a and c, it will just
-# fire the comparison function again, which will be frustating for the user.
+# fire the comparaison function again, which will be frustating for the user.
 #
 # The solution is that the dictionary contains a special key 'EQSETS' which is
 # associated to a list of sets. Each set represents an equality group. That is,
@@ -39,7 +39,7 @@ Sort a list using human comparison.
 # reverse order: from the best to the worst. As an option, the output can also
 # have blank lines which seperates groups of equal elements. We do this with
 # a second pass on the sorted list. This second pass is linear and uses the
-# comparisons log fabricated during the sorting process.
+# comparaisons log fabricated during the sorting process.
 
 
 ERROR = """YOU BROKE THE PROGRAM! WHAT HAVE YOU DONE?!!\n"""
@@ -58,7 +58,7 @@ USAGE = """Usage:
 	Put a blank line between groups of equal elements.
 
 	-l <logfile>
-	Load a comparisons log file. Comparisons stored in the log won't be asked again to the user.
+	Load a comparaisons log file. Comparaisons stored in the log won't be asked again to the user.
 
 	--nolog
 	Doesn't save a log file at the end. Use with caution. You really want a log file.
